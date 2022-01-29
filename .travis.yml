@@ -11,15 +11,15 @@ script:
   - docker run  -e CI=true react-test npm test 
 
 after_success:
-  - docker build -t khaled/complex-client  ./client
-  - docker build -t khaled/complex-server  ./server
-  - docker build -t khaled/complex-nginx  ./nginx
-  - docker build -t khaled/complex-worker  ./worker
+  - docker build -t khaledosman737/complex-client  ./client
+  - docker build -t khaledosman737/complex-server  ./server
+  - docker build -t khaledosman737/complex-nginx  ./nginx
+  - docker build -t khaledosman737/complex-worker  ./worker
   # log in to the Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #Take thos images and push them to docker hub
-  - docker push  khaled/complex-client
-  - docker push  khaled/complex-server
-  - docker push  khaled/complex-nginx
-  - docker push  khaled/complex-worker
+  - docker push  khaledosman737/complex-client
+  - docker push  khaledosman737/complex-server
+  - docker push  khaledosman737/complex-nginx
+  - docker push  khaledosman737/complex-worker
   
